@@ -16,6 +16,14 @@ word2_def = "scheiße"
 word3_def = "gUte"
 word4_def = "scHeiße"
 
+pasta_template = (
+  "{e1}{e2}{e1}{e2}{e1}{e2}{e1}{e2}{e1}{e2} {w1} {w2} {w3} {w4}{e1} das"
+  " ist {e3} {w3}{e1}{e1}{w4} genau{e1}{e1}hier{e1}{e1}{e1} genau{e3}"
+  "hier {e3}{e3}wenn ich so ƽage so ƽage ich es {e4} ich sage es so "
+  "{e4} über genau das rede ich genau hier genau hier(Refrain: genau "
+  "hier) mMMMMᎷМ{e4} {e1}{e1} {e1}НO0ОଠOOOOOОଠଠOoooᵒᵒᵒᵒᵒᵒᵒᵒᵒ{e3} {e1}"
+  "{e1} {e1} {e4} {e3} {e2} {e2} {e2} {e1}{e1}{w1} {w2}")
+
 emoji1 = raw_input("Erstes emoji [:ok_hand:]: ")
 emoji2 = raw_input("Zweites emoji [:eyes:]: ")
 emoji3 = raw_input("Drittes emoji [:heavy_check_mark:]: ")
@@ -35,4 +43,9 @@ word1 = word1 if word1 else word1_def
 word2 = word2 if word2 else word2_def
 word3 = word3 if word3 else word3_def
 word4 = word4 if word4 else word4_def
-print(emoji.emojize(emoji1 + emoji2 + emoji1 + emoji2 + emoji1 + emoji2 + emoji1 + emoji2 + emoji1 + emoji2 + " " + word1 + " " + word2 + " " + word3 + " " + word4 + emoji1 + " das ist " + emoji3 + " " + word3 + emoji1 + emoji1 + word4 + " genau" + emoji1 + emoji1 + "hier" + emoji1 + emoji1+ emoji1 + " genau" + emoji3 + "hier " + emoji3 + emoji3 + "wenn ich so ƽage so ƽage ich es " + emoji4 + " ich sage es so " + emoji4 + " über genau das rede ich genau hier genau hier(Refrain: genau hier) mMMMMᎷМ" + emoji4 + " " + emoji1 + emoji1 + " " + emoji1 + "НO0ОଠOOOOOОଠଠOoooᵒᵒᵒᵒᵒᵒᵒᵒᵒ" + emoji3 + " " + emoji1 + emoji1 + " " + emoji1 + " " + emoji4 + " " + emoji3 + " " + emoji2 + " " + emoji2 + " " + emoji2 + " " + emoji1 + emoji1 + word1 + " " + word2, use_aliases=True))
+
+text_vars = {
+  "e1": emoji1, "e2": emoji2, "e3": emoji3, "e4": emoji4,
+  "w1": word1, "w2": word2, "w3": word3, "w4": word4}
+
+print(emoji.emojize(pasta_template.format(**text_vars), use_aliases=True))
